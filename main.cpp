@@ -3,7 +3,7 @@
 #include <absl/container/flat_hash_map.h>
 #include <absl/container/node_hash_map.h>
 #include <absl/container/btree_map.h>
-#include <folly/container/F14Map.h>
+// #include <folly/container/F14Map.h>
 
 template <template <typename K, typename V> class HT, typename K, typename V>
 void bench_hashtable(std::string_view name, uint64_t test_size) {
@@ -31,8 +31,8 @@ int main() {
     bench_hashtable<absl::flat_hash_map, uint64_t, uint64_t>("flat_hash_map", TEST_SIZE);
     bench_hashtable<absl::node_hash_map, uint64_t, uint64_t>("node_hash_map", TEST_SIZE);
     bench_hashtable<absl::btree_map, uint64_t, uint64_t>("btree_map", TEST_SIZE);
-    bench_hashtable<folly::F14FastMap, uint64_t, uint64_t>("F14FastMap", TEST_SIZE);
-    bench_hashtable<folly::F14NodeMap, uint64_t, uint64_t>("F14NodeMap", TEST_SIZE);
+    // bench_hashtable<folly::F14FastMap, uint64_t, uint64_t>("F14FastMap", TEST_SIZE);
+    // bench_hashtable<folly::F14NodeMap, uint64_t, uint64_t>("F14NodeMap", TEST_SIZE);
     bench_hashtable<std::unordered_map, uint64_t, uint64_t>("unordered_map", TEST_SIZE);
     bench_hashtable<std::map, uint64_t, uint64_t>("std::map", TEST_SIZE);
 
