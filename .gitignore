@@ -34,3 +34,7 @@ packagecache
 /*venv*
 
 subprojects
+
+# Added by cargo
+
+/target
