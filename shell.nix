@@ -11,6 +11,7 @@ in pkgs.mkShell {
   buildInputs = with pkgs; [
     boost
     meson
+    ninja
     linuxPackages.perf
     (pkgs.writeScriptBin "sperf" ''
       sudo ${linuxPackages.perf}/bin/perf "$@"
